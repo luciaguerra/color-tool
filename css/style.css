@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+:root {
+    --bg: #18122B;
+    --container: #393053;
+    --input: #635985;
+    --text: #FFFFE8;
+    --input-details: #443C68;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text);
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-size: 100%;
+    background-color: var(--bg);
+    text-align: left;
+}
+
+body, .container, .hex-box, .color-boxes {
+    display: flex;
+}
+
+body, .container, .hex-box, .color-boxes {
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    max-width: 600px;
+    background-color: var(--container);
+    flex-direction: column;
+    border-radius: 1.5rem;
+    padding: 1.25rem;
+}
+
+.title {
+    font-size: 6vw;
+    line-height: 1;
+    margin: 1rem 0.3rem;
+}
+
+.hex-box {
+    background-color: var(--input);
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    margin: 0 0 1rem;
+    font-weight: 500;
+}
+
+label {
+    padding: auto 0.5rem;
+}
+
+[type=text] {
+    width: 50%;
+    background-color: transparent;
+    border: none;
+    margin: 0 1rem;
+    padding: 0 0.5rem;
+    border-bottom: 1px solid var(--text)
+}
+
+::placeholder {
+    color: #e9e9df91;
+    text-align: center;
+}
+
+[type=range] {
+    appearance: none;
+    width: 100%;
+    height: 0.3rem;
+    background-color: var(--input);
+    border-radius: 1rem;
+    margin: 0 0 1.2rem 0;
+}
+
+::-webkit-slider-thumb {
+    appearance: none;
+    background-color: var(--input-details);
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 100%;
+    border: 3px solid var(--input);
+}
+
+.color-boxes {
+    width: 70%;
+    margin: 0.5rem 0;
+    flex-direction: row;
+    text-align: center;
+}
+
+.box {
+    width: 10rem;
+    height: 5vw;
+    background-color: #000;
+    border-radius: 0.4rem;
+    margin: 0.3rem 2rem;
+}
+
+p {
+    font-size: 0.87rem;
+}
+
+@media screen and (min-width: 900px){
+    .title {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 600px){
+
+    .title {
+        font-size: 6.5vw;
+    }
+
+    .color-boxes, .hex-box {
+        flex-direction: column;
+    }
+
+    .color-boxes {
+        width:100%;
+    }
+
+    .box {
+        display: flex;
+        justify-content: center;
+        width: 10rem;
+        max-width: 80%;
+        height: 2.4rem;
+        margin: auto;
+    }
+
+    p {
+        margin: 0.5rem 0;
+    }
+    
+    [type=range] {
+        margin: auto;
+        justify-content: center;
+
+    }
+
+}
+
+@media screen and (max-width: 350px){
+    .title {
+        font-size: 6vw;
+    }
+}
