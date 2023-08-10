@@ -19,9 +19,7 @@
 body {
     width: 100%;
     height: 100vh;
-    font-size: 100%;
     background-color: var(--bg);
-    text-align: left;
 }
 
 body, .container, .hex-box, .color-boxes {
@@ -39,22 +37,26 @@ body, .container, .hex-box, .color-boxes {
     background-color: var(--container);
     flex-direction: column;
     border-radius: 1.5rem;
-    padding: 1.25rem;
+    padding: 1.8rem;
 }
 
 .title {
-    font-size: 6vw;
+    font-size: 3rem;
     line-height: 1;
-    margin: 1rem 0.3rem;
+    margin: 1.3rem 0;
 }
 
 .hex-box {
-    background-color: var(--input);
-    padding: 0.4rem;
+    max-width: 40%;
+    padding: 0.5rem;
     border-radius: 0.5rem;
     font-size: 0.85rem;
-    margin: 0 0 1rem;
+    margin: 0 0 1.5rem;
     font-weight: 500;
+}
+
+.hex-box, [type=range] {
+    background-color: var(--input);
 }
 
 label {
@@ -65,21 +67,20 @@ label {
     width: 50%;
     background-color: transparent;
     border: none;
-    margin: 0 1rem;
-    padding: 0 0.5rem;
-    border-bottom: 1px solid var(--text)
+    outline: none;
 }
 
 ::placeholder {
     color: #e9e9df91;
+}
+
+::placeholder, [type=text], .color-boxes, h1 {
     text-align: center;
 }
 
 [type=range] {
     appearance: none;
-    width: 100%;
     height: 0.3rem;
-    background-color: var(--input);
     border-radius: 1rem;
     margin: 0 0 1.2rem 0;
 }
@@ -97,7 +98,6 @@ label {
     width: 70%;
     margin: 0.5rem 0;
     flex-direction: row;
-    text-align: center;
 }
 
 .box {
@@ -105,17 +105,11 @@ label {
     height: 5vw;
     background-color: #000;
     border-radius: 0.4rem;
-    margin: 0.3rem 2rem;
+    margin: 0.3rem 2rem 0;
 }
 
 p {
-    font-size: 0.87rem;
-}
-
-@media screen and (min-width: 900px){
-    .title {
-        font-size: 5vw;
-    }
+    font-size: 0.9rem;
 }
 
 @media screen and (max-width: 600px){
@@ -133,7 +127,6 @@ p {
     }
 
     .box {
-        display: flex;
         justify-content: center;
         width: 10rem;
         max-width: 80%;
@@ -148,13 +141,25 @@ p {
     [type=range] {
         margin: auto;
         justify-content: center;
-
     }
+
+    h1 {
+        margin: 1rem 0;
+    }
+
+    .hex-box {
+        margin: 0 0 1rem;
+    }
+
 
 }
 
-@media screen and (max-width: 350px){
+@media screen and (max-width: 420px){
     .title {
         font-size: 6vw;
+    }
+
+    .hex-box {
+        max-width: 70%;
     }
 }
